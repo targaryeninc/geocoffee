@@ -7,7 +7,19 @@
     "prestart": "npm run build",
     "start": "nodemon server.js",
     "dev": "webpack-dev-server --env.NODE_ENV=development --open",
-    "build": "webpack --env.NODE_ENV=production"
+    "build": "webpack --env.NODE_ENV=production",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFilesAfterEnv": [
+      "./__tests__/setup/setupEnzyme.js"
+    ],
+    "testPathIgnorePatterns": [
+      "./__tests__/setup/"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -25,8 +37,12 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.0",
+    "jest": "^24.8.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
