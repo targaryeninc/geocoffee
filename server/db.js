@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 // to DROP and re-create the database schema, set following to true
-const resetDb = true;
+const resetDb = false;
 if (resetDb) {
   pool
     .query(rebuildDbStatment)
